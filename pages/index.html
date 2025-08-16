@@ -17,7 +17,7 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background: #f0f0f0;
+        background: #ffc8fc;
     }
 
     /* Main Container */
@@ -71,14 +71,14 @@
         justify-content: space-between;
         flex-wrap: nowrap;  /* Prevent line break */
         overflow-x: auto;   /* Allow scrolling if too wide */
-        gap: 10px;
+        gap: 1px;
         padding: 5px;
     }
     .buttons button {
         flex: 1;  /* Equal width buttons */
         min-width: 65px;  /* Prevent too small buttons */
         font-size: 14px;
-        padding: 8px;
+        padding: 6px;
         border-radius: 8px;
         border: none;
         background-color: #007BFF;
@@ -90,6 +90,24 @@
     .buttons button:hover {
         background-color: #0056b3;
     }
+    .container {
+        position: relative;
+        width: 270px;
+        height: 360px;
+        background: #fff2a5; /* default summer color */
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(2, 2, 2, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.8s ease;
+        overflow: hidden;
+        padding: 20px;
+        border:#fff 6px solid; 
+
+    }
+
 }
 
 </style>
@@ -101,7 +119,7 @@
         <div class="buttons">
             <button style="background-color: #fcd913;color: white;" onclick="setSeason('Summer')">Summer</button>
             <button style="background-color: #31217a; color: white;" onclick="setSeason('Rainy')">Rainy</button>
-            <button style="background-color: #76f7f7; color: white;" onclick="setSeason('Winter')">Winter</button>
+            <button style="background-color: #32c7c7; color: white;" onclick="setSeason('Winter')">Winter</button>
         </div>
     </div>
 
