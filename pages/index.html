@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Season Toggle</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: #f0f0f0;
+    }
+
+    /* Main Container */
+    .container {
+        position: relative;
+        width: 350px;
+        height: 400px;
+        background: #fff2a5; /* default summer color */
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(2, 2, 2, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.8s ease;
+        overflow: hidden;
+        padding: 20px;
+        border:#fff 6px solid; 
+
+    }
+
+    .container img {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .container h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+
+    .buttons button {
+        padding: 12px 10px;
+        margin: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .buttons button:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+
+   @media (max-width: 480px) {
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;  /* Prevent line break */
+        overflow-x: auto;   /* Allow scrolling if too wide */
+        gap: 10px;
+        padding: 5px;
+    }
+    .buttons button {
+        flex: 1;  /* Equal width buttons */
+        min-width: 65px;  /* Prevent too small buttons */
+        font-size: 14px;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        background-color: #007BFF;
+        color: white;
+        white-space: nowrap;  /* Prevent text wrapping */
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    .buttons button:hover {
+        background-color: #0056b3;
+    }
+}
+
+</style>
+</head>
+<body>
+    <div class="container" id="seasonContainer">
+        <img src="./icon/sun.png" alt="Season Icon" id="seasonIcon">
+        <h2 id="seasonTitle">Summer</h2>
+        <div class="buttons">
+            <button style="background-color: #fcd913;color: white;" onclick="setSeason('Summer')">Summer</button>
+            <button style="background-color: #31217a; color: white;" onclick="setSeason('Rainy')">Rainy</button>
+            <button style="background-color: #76f7f7; color: white;" onclick="setSeason('Winter')">Winter</button>
+        </div>
+    </div>
+
+<script>
+    const container = document.getElementById("seasonContainer");
+    const seasonTitle = document.getElementById("seasonTitle");
+    const seasonIcon = document.getElementById("seasonIcon");
+
+    function setSeason(season) {
+        if (season === 'Summer') {
+            container.style.backgroundColor = '#ffe96b';
+            seasonTitle.textContent = 'Summer';
+            seasonIcon.src = './icon/sun.png';
+        } else if (season === 'Rainy') {
+            container.style.backgroundColor = '#87CEEB';
+            seasonTitle.textContent = 'Rainy';
+            seasonIcon.src = './icon/rain.png';
+        } else if (season === 'Winter') {
+            container.style.backgroundColor = '#d4f1f9';
+            seasonTitle.textContent = 'Winter';
+            seasonIcon.src = './icon/winter.png';
+        }
+    }
+</script>
+</body>
+</html>
